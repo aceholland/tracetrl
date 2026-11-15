@@ -1,0 +1,27 @@
+{
+  "zip": "/home/runner/work/_temp/dist/AceSentry_submission.zip",
+  "zip_sha256": "94ccff49d3d6ec9f8cc07f18de1eaba08409bd9c32577284bfe1f8d0d0490844",
+  "size_bytes": 15657,
+  "cap_bytes": 2000000000,
+  "declared_package_sha256": "04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
+  "passed": [
+    "size: 15.7 KB <= 2.0 GB",
+    "layout: participant_module/, assets/, submission.json, declaration.json, README.md",
+    "submission.json: team AceSentry, base_id apctt-base-9e7fe1324bb6",
+    "models: no catalogue model",
+    "contents: no environment, packages, caches, links, catalogue weights or undeclared weights",
+    "package hash matches submission.json: 04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
+    "licence: MIT, participant_module/LICENSE present"
+  ],
+  "errors": [],
+  "reviews": [
+    "licence dataset APCTT public sample cases (contracts/public-cases.json, USGS reports): review: unrecognised licence string \"U.S. public domain (USGS); some figures third-party, see the manifest licence_note\""
+  ],
+  "notes": [
+    "not packed (the submission holds no environment; decision D59): .git/, .gitattributes, .github/, .gitignore, LICENSE, base-check.json, docs/, official-example.json, package-check.json, requirements-dev.txt, tests/, tools/"
+  ],
+  "result": "VALID_WITH_REVIEW",
+  "exit_code": 2,
+  "source": "/home/runner/work/tracetrl/tracetrl",
+  "reminder": "third-party pure-Python code in your package is your responsibility: if a licence or security problem arises later, your team bears the legal responsibility and the award is revoked (D66)"
+}

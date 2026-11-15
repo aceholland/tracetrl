@@ -11,8 +11,8 @@
     "kit_version": "0.5.0",
     "contract_version": "0.3.0",
     "worker_protocol_version": "apctt-worker-v2",
-    "declared_package_sha256": "ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
-    "verified_package_sha256": "ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+    "declared_package_sha256": "04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
+    "verified_package_sha256": "04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
     "verification_status": "verified",
     "example_only": false,
     "loading_policy": "cold_per_case",
@@ -40,7 +40,7 @@
       "status": "abstained",
       "predicted_trl": null,
       "diagnostics": {
-        "accepted_trace_id": "9fe1b2619cd149658ae978f02661f208",
+        "accepted_trace_id": "7b067c3cf59b456fa32cf9f1934255a3",
         "cleanup_confirmed": true,
         "compute": {
           "cuda_available": null,
@@ -71,10 +71,10 @@
           "total": "supervisor"
         },
         "timings_ms": {
-          "assess": 1384.916,
-          "cleanup": 0.017,
-          "load": 47.432,
-          "total": 1821.693
+          "assess": 1454.573,
+          "cleanup": 0.015,
+          "load": 299.021,
+          "total": 2886.792
         },
         "truncated": false,
         "unavailable_reasons": {
@@ -93,7 +93,7 @@
       "status": "abstained",
       "predicted_trl": null,
       "diagnostics": {
-        "accepted_trace_id": "ae57031fa9de431ca0027f489d57c452",
+        "accepted_trace_id": "c935ab5d65974a4f9283356b27c880da",
         "cleanup_confirmed": true,
         "compute": {
           "cuda_available": null,
@@ -124,10 +124,10 @@
           "total": "supervisor"
         },
         "timings_ms": {
-          "assess": 2714.489,
-          "cleanup": 0.015,
-          "load": 155.913,
-          "total": 3597.253
+          "assess": 3013.987,
+          "cleanup": 0.012,
+          "load": 172.215,
+          "total": 4131.882
         },
         "truncated": false,
         "unavailable_reasons": {
@@ -146,7 +146,7 @@
       "status": "abstained",
       "predicted_trl": null,
       "diagnostics": {
-        "accepted_trace_id": "b7d57f0c78a04a7d8f552fd9aecd2a3e",
+        "accepted_trace_id": "9d1d25a528c34b13b2f0c20deedb2efd",
         "cleanup_confirmed": true,
         "compute": {
           "cuda_available": null,
@@ -177,10 +177,10 @@
           "total": "supervisor"
         },
         "timings_ms": {
-          "assess": 2555.602,
-          "cleanup": 0.017,
-          "load": 101.453,
-          "total": 3382.553
+          "assess": 3073.131,
+          "cleanup": 0.02,
+          "load": 159.596,
+          "total": 4583.187
         },
         "truncated": false,
         "unavailable_reasons": {
@@ -199,7 +199,7 @@
       "status": "abstained",
       "predicted_trl": null,
       "diagnostics": {
-        "accepted_trace_id": "270eb851d63f4aadb31a91c7ec1bbaa6",
+        "accepted_trace_id": "1f86de79da774c87ad0f45d8d3a37fee",
         "cleanup_confirmed": true,
         "compute": {
           "cuda_available": null,
@@ -230,10 +230,10 @@
           "total": "supervisor"
         },
         "timings_ms": {
-          "assess": 4459.92,
-          "cleanup": 0.015,
-          "load": 45.798,
-          "total": 5006.137
+          "assess": 5335.522,
+          "cleanup": 0.012,
+          "load": 179.932,
+          "total": 6240.293
         },
         "truncated": false,
         "unavailable_reasons": {

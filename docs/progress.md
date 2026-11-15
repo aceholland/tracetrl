@@ -14,3 +14,5 @@ Ruling: Registered team supplied by user is AceSentry; supersedes provisional dr
 Ruling: The public USGS source declaration is retained despite the policy's VALID_WITH_REVIEW flag. No source or licence information is concealed to obtain a clean mechanical check.
 Ruling: Full CPU base inventory checking moved to GitHub-hosted Ubuntu because C: free disk was insufficient; local Linux checks use the pinned server development environment.
 Ruling: Public smoke cases all abstained. Coverage is limited; publish as an experimental baseline, not a proven competitive assessor.
+
+Task 3: complete for the agreed package/source delivery. Private repository aceholland/tracetrl pushed. Hosted Official CPU base checks and CPU smoke tests passed on commit 34ca75b89db73fb5a75592d1e8d25748d95a680b. Final ZIP downloaded from that checked hosted artifact. Submission form remains unsent. Optional semantic mode remains disabled pending benchmarking.

@@ -34,6 +34,13 @@ Ubuntu with Python 3.12.3 and the kit's exact requirements-dev.lock: all 24 test
 
 ## Remaining checks
 
-- The full frozen CPU base was not built locally because C: had too little free space. The hosted Ubuntu run built and verified the official CPU base, passed all 24 tests with its interpreter, and passed the official result validator. See hosted-base-check.json. Its initial packing step exposed a missing empty assets directory in Git; assets/.gitkeep now preserves it in source checkouts, and the complete workflow is rerun to verify packaging too.
+- The [complete hosted workflow passed](https://github.com/aceholland/tracetrl/actions/runs/43728636767) on code commit 34ca75b89db73fb5a75592d1e8d25748d95a680b: official CPU base build/inventory check, 24 tests, official result validation, and packing. See hosted-base-check.json, hosted-example-validation.json and hosted-package-check.json. The checked hosted-built ZIP is the user-facing AceSentry_submission.zip.
 - Optional encoder cold-start runtime, memory and usefulness require a real-weight benchmark before it is enabled.
 - No submission form has been sent. GitHub publication and portal submission are separate actions.
+
+## Final artifact
+
+- ZIP SHA-256: `94ccff49d3d6ec9f8cc07f18de1eaba08409bd9c32577284bfe1f8d0d0490844`
+- Package SHA-256: `04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb`
+- Size: 15,657 bytes. Official intake checker: VALID_WITH_REVIEW, zero errors, one declared USGS source licence review item.
+- A Git archive exported into a separate directory also packed with the same package hash. .gitattributes preserves hash-sensitive files across Windows and Linux; assets/.gitkeep preserves the required directory in checkouts.
