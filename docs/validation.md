@@ -13,9 +13,9 @@ Registered team: AceSentry. Date: 2026-11-15.
 
 See live-api-validation.json for worker metadata, hashes, criterion IDs and quotation checks. Generic rules now handle scientific model comparisons, numerical results and executable workflows. Independent adversarial review identified false positives involving another model, target thresholds, proposals and negated or unsatisfactory results. They were reproduced and added as regression tests before correction. No organiser TRL estimate is hardcoded or used as an inference label. These results do not establish expert or hidden-set accuracy.
 
-Package SHA-256: `62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866`. ZIP SHA-256: `bc2ae4208b8e04c765e1b78720b77164045175838574b90dce6bfa46af85a1b1`. Official intake check: **VALID_WITH_REVIEW**, zero errors, one declared USGS licence review item. ZIP size: 16,719 bytes.
+Package SHA-256: `62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866`. ZIP SHA-256: `e02522bdb441373f159235e3ab17b77359965ea5a4235e647251f2e1d1424ff0`. Official intake check: **VALID_WITH_REVIEW**, zero errors, one declared USGS licence review item. ZIP size: 16,708 bytes.
 
-Current-version hosted frozen CPU base checks are being run; older hosted evidence below applies only to 0.1.0 until superseded. No Google form submission has been made. The local website remains a prototype; official Stage 2 web development/integration must take place on site.
+The [official CPU base workflow](https://github.com/aceholland/tracetrl/actions/runs/43743541521) and [Windows/Linux CPU smoke tests](https://github.com/aceholland/tracetrl/actions/runs/43743541513) both passed on core commit 5c341f280a4cfab123aae4f024cb8744d95d1413. Hosted artifacts were downloaded, the intake check was repeated locally, and every packaged code/asset byte matched the running core. Older records below apply only to 0.1.0. No Google form submission has been made. The local website remains a prototype; official Stage 2 web development/integration must take place on site.
 
 ---
 

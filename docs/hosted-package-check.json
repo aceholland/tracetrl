@@ -1,16 +1,16 @@
 {
   "zip": "/home/runner/work/_temp/dist/AceSentry_submission.zip",
-  "zip_sha256": "94ccff49d3d6ec9f8cc07f18de1eaba08409bd9c32577284bfe1f8d0d0490844",
-  "size_bytes": 15657,
+  "zip_sha256": "e02522bdb441373f159235e3ab17b77359965ea5a4235e647251f2e1d1424ff0",
+  "size_bytes": 16708,
   "cap_bytes": 2000000000,
-  "declared_package_sha256": "04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
+  "declared_package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
   "passed": [
-    "size: 15.7 KB <= 2.0 GB",
+    "size: 16.7 KB <= 2.0 GB",
     "layout: participant_module/, assets/, submission.json, declaration.json, README.md",
     "submission.json: team AceSentry, base_id apctt-base-9e7fe1324bb6",
     "models: no catalogue model",
     "contents: no environment, packages, caches, links, catalogue weights or undeclared weights",
-    "package hash matches submission.json: 04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
+    "package hash matches submission.json: 62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
     "licence: MIT, participant_module/LICENSE present"
   ],
   "errors": [],

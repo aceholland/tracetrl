@@ -376,5 +376,55 @@
     }
   ],
   "checks_passed": true,
-  "accuracy_limit": "Functional, identity and quotation checks; no hidden-set or expert accuracy score."
+  "accuracy_limit": "Functional, identity and quotation checks; no hidden-set or expert accuracy score.",
+  "browser_upload": {
+    "report": "USGS-SDG-061",
+    "pages": 36,
+    "elapsed_seconds": 10.17,
+    "status": "completed",
+    "predicted_trl": 3,
+    "criteria_count": 12,
+    "criterion_evidence_link_tested_page": 23,
+    "download_matches_independently_validated_api_result": true
+  },
+  "launcher": {
+    "cold_start_tested": true,
+    "services_remained_available_after_launcher_exit": true,
+    "path": "outputs/demo/Run-TraceTRL.cmd"
+  },
+  "checks": {
+    "assessor_unit_tests_passed": 35,
+    "upload_tests_passed": 9,
+    "strict_ui_audit_findings": 0,
+    "hosted_official_cpu_base": "passed",
+    "hosted_windows_linux_smoke_tests": "passed",
+    "hosted_run_url": "https://github.com/aceholland/tracetrl/actions/runs/43743541521",
+    "hosted_core_commit": "5c341f280a4cfab123aae4f024cb8744d95d1413",
+    "hosted_zip_matches_running_code": true
+  },
+  "submission": {
+    "zip": "C:\\Users\\User\\Documents\\Codex\\2026-11-15\\s\\outputs\\AceSentry_submission.zip",
+    "zip_sha256": "e02522bdb441373f159235e3ab17b77359965ea5a4235e647251f2e1d1424ff0",
+    "size_bytes": 16708,
+    "cap_bytes": 2000000000,
+    "declared_package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
+    "passed": [
+      "size: 16.7 KB <= 2.0 GB",
+      "layout: participant_module/, assets/, submission.json, declaration.json, README.md",
+      "submission.json: team AceSentry, base_id apctt-base-9e7fe1324bb6",
+      "models: no catalogue model",
+      "contents: no environment, packages, caches, links, catalogue weights or undeclared weights",
+      "package hash matches submission.json: 62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
+      "licence: MIT, participant_module/LICENSE present"
+    ],
+    "errors": [],
+    "reviews": [
+      "licence dataset APCTT public sample cases (contracts/public-cases.json, USGS reports): review: unrecognised licence string \"U.S. public domain (USGS); some figures third-party, see the manifest licence_note\""
+    ],
+    "notes": [],
+    "result": "VALID_WITH_REVIEW",
+    "exit_code": 2,
+    "reminder": "third-party pure-Python code in your package is your responsibility: if a licence or security problem arises later, your team bears the legal responsibility and the award is revoked (D66)"
+  },
+  "public_deployment": false
 }

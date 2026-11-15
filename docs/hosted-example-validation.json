@@ -1,7 +1,7 @@
 {
   "check": "direct official result validator; not the Linux worker",
   "issues": [],
-  "elapsed_seconds": 0.0749,
+  "elapsed_seconds": 0.0487,
   "result": {
     "schema_version": "apctt-pdf-example-v1",
     "case_id": "DEMO-001",

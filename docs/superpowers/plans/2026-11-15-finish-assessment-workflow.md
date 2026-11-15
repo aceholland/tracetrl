@@ -8,10 +8,10 @@
 
 **Constraints:** Offline inference; three PDFs; 50 MiB/file; 80 MiB encoded request; 300 aggregate pages; 180-second worker budget. No model downloads, reference-label inference or forced TRLs. Local development execution is distinct from the full frozen CPU base.
 
-- [ ] Extend analytical/model evidence rules with positive and adversarial tests; retain subject, negation, environment and future-work safeguards.
-- [ ] Show all evidence, missing evidence and rationale per criterion, with working source-page buttons.
-- [ ] Validate official upload limits and encrypted/unreadable PDFs. Reject 301 aggregate pages, accept 300.
-- [ ] Rebuild the Stage 1 ZIP using the untouched official tool and verify its hash.
-- [ ] Run actual official API jobs and verify package/result identity; run real and synthetic browser uploads.
-- [ ] Push reviewed core changes and run hosted frozen-base checks. Preserve the licence review item honestly.
-- [ ] Leave the working result open and provide a local launcher. Record remaining accuracy and deployment limits.
+- [x] Extend analytical/model evidence rules with positive and adversarial tests; retain subject, negation, environment and future-work safeguards.
+- [x] Show all evidence, missing evidence and rationale per criterion, with working source-page buttons.
+- [x] Validate official upload limits and encrypted/unreadable PDFs. Reject 301 aggregate pages, accept 300.
+- [x] Rebuild the Stage 1 ZIP using the untouched official tool and verify its hash.
+- [x] Run actual official API jobs and verify package/result identity; run a real browser upload and synthetic HTTP assessment.
+- [x] Push reviewed core changes and run hosted frozen-base checks. Preserve the licence review item honestly.
+- [x] Leave the working result open and provide a local launcher. Record remaining accuracy and deployment limits.
