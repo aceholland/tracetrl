@@ -1,0 +1,4 @@
+* text eol=lf
+# The official package hash covers raw bytes; preserve these on every platform.
+participant_module/** -text
+assets/** -text
