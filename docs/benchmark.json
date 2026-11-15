@@ -1,0 +1,36 @@
+{
+  "platform": "win32",
+  "python": "3.13.3",
+  "backend": "lexical; no torch or encoder loaded",
+  "rss_note": "20 ms sampling; process RSS, not system RAM or a hard peak guarantee",
+  "accuracy_note": "No expert criterion labels or hidden evaluation; these are runtime/contract checks only",
+  "cases": [
+    {
+      "case_id": "USGS-SDG-012",
+      "elapsed_seconds_including_startup": 2.774,
+      "peak_sampled_rss_mib": 47.11,
+      "contract_issues": 0,
+      "status": "abstained",
+      "predicted_trl": null,
+      "met_criteria": 0
+    },
+    {
+      "case_id": "USGS-SDG-040",
+      "elapsed_seconds_including_startup": 3.219,
+      "peak_sampled_rss_mib": 52.91,
+      "contract_issues": 0,
+      "status": "abstained",
+      "predicted_trl": null,
+      "met_criteria": 0
+    },
+    {
+      "case_id": "USGS-SDG-061",
+      "elapsed_seconds_including_startup": 4.631,
+      "peak_sampled_rss_mib": 73.0,
+      "contract_issues": 0,
+      "status": "abstained",
+      "predicted_trl": null,
+      "met_criteria": 1
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Small local smoke-test dependency only; never ship this environment in a submission.
+pypdf==6.19.0

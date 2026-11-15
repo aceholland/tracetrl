@@ -1,0 +1,62 @@
+{
+  "check": "direct official result validator; not the Linux worker",
+  "issues": [],
+  "elapsed_seconds": 1.7829,
+  "result": {
+    "schema_version": "apctt-pdf-example-v1",
+    "case_id": "USGS-SDG-012",
+    "assessment_target": {
+      "target_id": "USGS-SDG-012-T1",
+      "type": "technology",
+      "description": "P2S software coupling PRMS and SNTemp"
+    },
+    "checklist_version": "APCTT-2026-CHECKLIST-v1",
+    "criterion_status": {
+      "APCTT-C01": "insufficient evidence",
+      "APCTT-C02": "insufficient evidence",
+      "APCTT-C03": "insufficient evidence",
+      "APCTT-C04": "insufficient evidence",
+      "APCTT-C05": "insufficient evidence",
+      "APCTT-C06": "insufficient evidence",
+      "APCTT-C07": "insufficient evidence",
+      "APCTT-C08": "insufficient evidence",
+      "APCTT-C09": "insufficient evidence",
+      "APCTT-C10": "insufficient evidence",
+      "APCTT-C11": "insufficient evidence",
+      "APCTT-C12": "insufficient evidence"
+    },
+    "evidence_reference": {
+      "APCTT-C01": [],
+      "APCTT-C02": [],
+      "APCTT-C03": [],
+      "APCTT-C04": [],
+      "APCTT-C05": [],
+      "APCTT-C06": [],
+      "APCTT-C07": [],
+      "APCTT-C08": [],
+      "APCTT-C09": [],
+      "APCTT-C10": [],
+      "APCTT-C11": [],
+      "APCTT-C12": []
+    },
+    "missing_evidence": {
+      "APCTT-C01": "No target-specific passage establishes: Basic principles (TRL 1): the report states the scientific or engineering principles on which the assessed technology is based, citing observations, studies or literature.",
+      "APCTT-C02": "No target-specific passage establishes: Concept formulated (TRL 2): the report describes a practical application of those principles and how the assessed technology is intended to work in it.",
+      "APCTT-C03": "No target-specific passage establishes: Proof of concept (TRL 3): the report presents analytical or laboratory results that demonstrate the critical function or characteristic of the assessed technology.",
+      "APCTT-C04": "No target-specific passage establishes: Laboratory validation (TRL 4): the report states that the assessed component or a low-fidelity breadboard was tested in a laboratory environment and reports the results.",
+      "APCTT-C05": "No target-specific passage establishes: Relevant-environment validation (TRL 5): the report states that the assessed component or breadboard was tested in a simulated or relevant environment representative of the intended environment, and reports the results.",
+      "APCTT-C06": "No target-specific passage establishes: Prototype in relevant environment (TRL 6): the report states that a representative model or prototype of the assessed system or subsystem was demonstrated in a relevant environment.",
+      "APCTT-C07": "No target-specific passage establishes: Prototype in operational environment (TRL 7): the report states that a prototype close to the final configuration was demonstrated in the actual operational environment.",
+      "APCTT-C08": "No target-specific passage establishes: System qualified (TRL 8): the report states that the final system was completed and qualified through test and demonstration against its requirements.",
+      "APCTT-C09": "No target-specific passage establishes: Proven in operation (TRL 9): the report states that the final system was used successfully in actual operations or deployment over a stated period.",
+      "APCTT-C10": "No target-specific passage establishes: Quantified results against requirements: the report compares measured performance with stated requirements or acceptance criteria and says whether they were met.",
+      "APCTT-C11": "No target-specific passage establishes: Environment and test article defined: the report describes the test conditions and the configuration or fidelity of the tested article (for example breadboard, prototype, production unit) relative to the intended application.",
+      "APCTT-C12": "No target-specific passage establishes: Evidence matches the assessment target: the cited evidence concerns the assessed target itself (component, subsystem, system or technology), not a different element or only the parent project as a whole."
+    },
+    "criterion_rationale": {},
+    "assessment_status": "abstained",
+    "predicted_trl": null,
+    "abstention_reason": "insufficient evidence",
+    "error_code": null
+  }
+}

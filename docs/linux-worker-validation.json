@@ -1,0 +1,250 @@
+{
+  "platform": "Ubuntu, Python 3.12.3",
+  "environment": "kit requirements-dev.lock; not the full frozen CPU base",
+  "frozen_base_verified": false,
+  "package": {
+    "package_id": "tracetrl-cpu",
+    "profile": "dev",
+    "api_version": "apctt-api-v0.2-draft",
+    "schema_version": "apctt-pdf-example-v1",
+    "checklist_version": "APCTT-2026-CHECKLIST-v1",
+    "kit_version": "0.5.0",
+    "contract_version": "0.3.0",
+    "worker_protocol_version": "apctt-worker-v2",
+    "declared_package_sha256": "ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+    "verified_package_sha256": "ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+    "verification_status": "verified",
+    "example_only": false,
+    "loading_policy": "cold_per_case",
+    "config_sha256": "f2ce470562e9a614762e45918ecae4d0d6f6a2fb1d354dbe9c0d691285fdb9ff",
+    "checklist_sha256": "4d667fb42bb74ad64c31bd609a5e5f7485c53e2825487867aec47a56fb1e8e49",
+    "compute": {
+      "device": "cpu",
+      "require_cuda": false,
+      "allow_cpu_fallback": false,
+      "precision": "float32",
+      "loading_policy": "cold_per_case",
+      "seed": 42,
+      "visible_devices": null,
+      "probe": {
+        "device": "cpu",
+        "require_cuda": false,
+        "status": "NOT_REQUIRED"
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "DEMO-001",
+      "result_origin": "module",
+      "status": "abstained",
+      "predicted_trl": null,
+      "diagnostics": {
+        "accepted_trace_id": "9fe1b2619cd149658ae978f02661f208",
+        "cleanup_confirmed": true,
+        "compute": {
+          "cuda_available": null,
+          "device": "cpu",
+          "kernel_probe_passed": null,
+          "measurement_method": null,
+          "peak_allocated_bytes": null,
+          "peak_reserved_bytes": null,
+          "torch_cuda_build": null,
+          "torch_version": null
+        },
+        "exit_code": 0,
+        "exit_signal": null,
+        "loading_policy": "cold_per_case",
+        "phase": "finished",
+        "profile": "dev",
+        "raw_output_bytes": 3920,
+        "raw_output_sha256": "892920a7f2effb6b35d6af47f3f899cfac3de80ff2a0bc625ccb6ae61fa3b57c",
+        "stderr_bytes": 0,
+        "stderr_truncated": false,
+        "stdout_bytes": 0,
+        "stdout_truncated": false,
+        "timed_out": false,
+        "timing_sources": {
+          "assess": "worker_observed",
+          "cleanup": "worker_observed",
+          "load": "worker_observed",
+          "total": "supervisor"
+        },
+        "timings_ms": {
+          "assess": 1384.916,
+          "cleanup": 0.017,
+          "load": 47.432,
+          "total": 1821.693
+        },
+        "truncated": false,
+        "unavailable_reasons": {
+          "kernel_probe_passed": "PROBE_RUNS_AT_SERVER_START",
+          "peak_memory": "NOT_MEASURED",
+          "torch": "TORCH_NOT_IMPORTED"
+        },
+        "warning_codes": [],
+        "worker_phase": "finished"
+      },
+      "verified_package_sha256": null
+    },
+    {
+      "case_id": "USGS-SDG-012",
+      "result_origin": "module",
+      "status": "abstained",
+      "predicted_trl": null,
+      "diagnostics": {
+        "accepted_trace_id": "ae57031fa9de431ca0027f489d57c452",
+        "cleanup_confirmed": true,
+        "compute": {
+          "cuda_available": null,
+          "device": "cpu",
+          "kernel_probe_passed": null,
+          "measurement_method": null,
+          "peak_allocated_bytes": null,
+          "peak_reserved_bytes": null,
+          "torch_cuda_build": null,
+          "torch_version": null
+        },
+        "exit_code": 0,
+        "exit_signal": null,
+        "loading_policy": "cold_per_case",
+        "phase": "finished",
+        "profile": "dev",
+        "raw_output_bytes": 3921,
+        "raw_output_sha256": "369a1c57f81a5d84036b92a420dd86b96c4c8580836bf9b809224abff032a88e",
+        "stderr_bytes": 0,
+        "stderr_truncated": false,
+        "stdout_bytes": 0,
+        "stdout_truncated": false,
+        "timed_out": false,
+        "timing_sources": {
+          "assess": "worker_observed",
+          "cleanup": "worker_observed",
+          "load": "worker_observed",
+          "total": "supervisor"
+        },
+        "timings_ms": {
+          "assess": 2714.489,
+          "cleanup": 0.015,
+          "load": 155.913,
+          "total": 3597.253
+        },
+        "truncated": false,
+        "unavailable_reasons": {
+          "kernel_probe_passed": "PROBE_RUNS_AT_SERVER_START",
+          "peak_memory": "NOT_MEASURED",
+          "torch": "TORCH_NOT_IMPORTED"
+        },
+        "warning_codes": [],
+        "worker_phase": "finished"
+      },
+      "verified_package_sha256": null
+    },
+    {
+      "case_id": "USGS-SDG-040",
+      "result_origin": "module",
+      "status": "abstained",
+      "predicted_trl": null,
+      "diagnostics": {
+        "accepted_trace_id": "b7d57f0c78a04a7d8f552fd9aecd2a3e",
+        "cleanup_confirmed": true,
+        "compute": {
+          "cuda_available": null,
+          "device": "cpu",
+          "kernel_probe_passed": null,
+          "measurement_method": null,
+          "peak_allocated_bytes": null,
+          "peak_reserved_bytes": null,
+          "torch_cuda_build": null,
+          "torch_version": null
+        },
+        "exit_code": 0,
+        "exit_signal": null,
+        "loading_policy": "cold_per_case",
+        "phase": "finished",
+        "profile": "dev",
+        "raw_output_bytes": 3950,
+        "raw_output_sha256": "f987755bb96161e28fe583be86ddc7928abc3e7f9f71ed6742d19626b58c400c",
+        "stderr_bytes": 430,
+        "stderr_truncated": false,
+        "stdout_bytes": 0,
+        "stdout_truncated": false,
+        "timed_out": false,
+        "timing_sources": {
+          "assess": "worker_observed",
+          "cleanup": "worker_observed",
+          "load": "worker_observed",
+          "total": "supervisor"
+        },
+        "timings_ms": {
+          "assess": 2555.602,
+          "cleanup": 0.017,
+          "load": 101.453,
+          "total": 3382.553
+        },
+        "truncated": false,
+        "unavailable_reasons": {
+          "kernel_probe_passed": "PROBE_RUNS_AT_SERVER_START",
+          "peak_memory": "NOT_MEASURED",
+          "torch": "TORCH_NOT_IMPORTED"
+        },
+        "warning_codes": [],
+        "worker_phase": "finished"
+      },
+      "verified_package_sha256": null
+    },
+    {
+      "case_id": "USGS-SDG-061",
+      "result_origin": "module",
+      "status": "abstained",
+      "predicted_trl": null,
+      "diagnostics": {
+        "accepted_trace_id": "270eb851d63f4aadb31a91c7ec1bbaa6",
+        "cleanup_confirmed": true,
+        "compute": {
+          "cuda_available": null,
+          "device": "cpu",
+          "kernel_probe_passed": null,
+          "measurement_method": null,
+          "peak_allocated_bytes": null,
+          "peak_reserved_bytes": null,
+          "torch_cuda_build": null,
+          "torch_version": null
+        },
+        "exit_code": 0,
+        "exit_signal": null,
+        "loading_policy": "cold_per_case",
+        "phase": "finished",
+        "profile": "dev",
+        "raw_output_bytes": 4046,
+        "raw_output_sha256": "381ddeab8d384680f46133a0376023214d012264c203b07eba3a649c05158582",
+        "stderr_bytes": 0,
+        "stderr_truncated": false,
+        "stdout_bytes": 0,
+        "stdout_truncated": false,
+        "timed_out": false,
+        "timing_sources": {
+          "assess": "worker_observed",
+          "cleanup": "worker_observed",
+          "load": "worker_observed",
+          "total": "supervisor"
+        },
+        "timings_ms": {
+          "assess": 4459.92,
+          "cleanup": 0.015,
+          "load": 45.798,
+          "total": 5006.137
+        },
+        "truncated": false,
+        "unavailable_reasons": {
+          "kernel_probe_passed": "PROBE_RUNS_AT_SERVER_START",
+          "peak_memory": "NOT_MEASURED",
+          "torch": "TORCH_NOT_IMPORTED"
+        },
+        "warning_codes": [],
+        "worker_phase": "finished"
+      },
+      "verified_package_sha256": null
+    }
+  ]
+}

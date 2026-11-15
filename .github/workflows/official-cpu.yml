@@ -1,0 +1,50 @@
+name: Official CPU base checks
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'participant_module/**'
+      - 'assets/**'
+      - 'submission.json'
+      - '.github/workflows/official-cpu.yml'
+permissions:
+  contents: read
+jobs:
+  official-base:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      UV_NO_CACHE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download and verify the supplied CPU kit
+        shell: bash
+        run: |
+          curl --fail --location --retry 3 'https://drive.google.com/uc?export=download&id=1jHY5MmyeTJ9dCx9XPkncEnt_wdpIXPb8' --output "$RUNNER_TEMP/kit.zip"
+          python -c 'import hashlib,os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"kit.zip"; assert hashlib.sha256(p.read_bytes()).hexdigest()=="957def883e5f388c6fd2c42a98f01e4f83954a41fb4278f279550058a0228d5e", "Official kit archive changed; inspect the new release before updating"'
+          unzip -q "$RUNNER_TEMP/kit.zip" -d "$RUNNER_TEMP/kit"
+          echo "APCTT_KIT=$RUNNER_TEMP/kit/apctt-participant-kit-0.5.0-cpu" >> "$GITHUB_ENV"
+      - name: Build and check the official CPU development base
+        shell: bash
+        run: |
+          python -m pip install uv==0.13.8
+          python "$APCTT_KIT/tools/make_env.py" --base-dir "$RUNNER_TEMP/apctt-base" --flavor cpu --python "$(command -v python)" --uv "$(command -v uv)"
+          python "$APCTT_KIT/tools/make_env.py" --check --base-dir "$RUNNER_TEMP/apctt-base" --json > base-check.json
+      - name: Test and validate with the base interpreter
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/apctt-base/bin/python" -m unittest discover -s tests -v
+          "$RUNNER_TEMP/apctt-base/bin/python" tools/validate.py --kit "$APCTT_KIT" --result-output official-example.json
+          "$RUNNER_TEMP/apctt-base/bin/python" "$APCTT_KIT/tools/make_submission.py" . --output "$RUNNER_TEMP/dist" --json > package-check.json || test "$?" -eq 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: official-cpu-validation
+          path: |
+            base-check.json
+            official-example.json
+            package-check.json
+            ${{ runner.temp }}/dist/AceSentry_submission.zip

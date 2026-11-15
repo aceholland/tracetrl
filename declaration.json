@@ -1,0 +1,53 @@
+{
+  "declaration_version": "tracetrl-declaration-v1",
+  "example_only": false,
+  "team": "AceSentry",
+  "package_id": "tracetrl-cpu",
+  "package_version": "0.1.0",
+  "declared_package_sha256": "ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+  "team_training": "no_team_training",
+  "training": null,
+  "data_sources": [
+    {
+      "source": "APCTT participant kit, official checklist APCTT-2026-CHECKLIST-v1 and contract documentation",
+      "version": "0.5.0",
+      "date": "2026-11-15",
+      "role": "Interface implementation, rule design, checklist fixture and direct contract validation",
+      "label_origin": "Checklist descriptions only; no expert or hidden evaluation labels",
+      "linked_project": "2nd APCTT Hackathon 2026",
+      "license": "MIT"
+    },
+    {
+      "source": "Team-authored synthetic text PDF fixtures",
+      "version": "0.1.0",
+      "date": "2026-11-15",
+      "role": "Functional tests only; not training or an accuracy benchmark",
+      "label_origin": "Hand-specified expected behavior for synthetic examples",
+      "linked_project": "TraceTRL",
+      "license": "MIT"
+    },
+    {
+      "source": "APCTT public sample cases (contracts/public-cases.json, USGS reports)",
+      "version": "kit 0.5.0",
+      "date": "2026-11-15",
+      "role": "Runtime and direct result-contract smoke tests on USGS-SDG-012, USGS-SDG-040, USGS-SDG-061; no training or accuracy tuning",
+      "label_origin": "No reference labels used for inference or tuning; no expert criterion labels available",
+      "linked_project": "Public diagnostic smoke cases",
+      "license": "U.S. public domain (USGS); some figures third-party, see the manifest licence_note"
+    }
+  ],
+  "inference_assets": {
+    "source_code": "participant_module/; package hash written by the official packing tool",
+    "weights": [],
+    "prompts_or_rules": [
+      "participant_module/reasoning.py",
+      "participant_module/evidence.py",
+      "participant_module/criterion_meanings.json"
+    ],
+    "reference_assets": [],
+    "dependency_declarations": [
+      "pypdf 6.19.0 from the common base; base_id in submission.json"
+    ]
+  },
+  "notes": "AI-assisted original code; no team training. Registered team name supplied by the user: AceSentry. Optional MiniLM is disabled, not loaded or used in the default package. No reference TRL labels are used for inference."
+}

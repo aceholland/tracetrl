@@ -1,0 +1,24 @@
+{
+  "zip": "C:\\Users\\User\\Documents\\Codex\\2026-11-15\\s\\outputs\\tracetrl\\..\\AceSentry_submission.zip",
+  "zip_sha256": "0b411fdf188a49d8ffc0e79d33c50d9650333298a616ba573400c3ba8f5fb210",
+  "size_bytes": 15561,
+  "cap_bytes": 2000000000,
+  "declared_package_sha256": "ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+  "passed": [
+    "size: 15.6 KB <= 2.0 GB",
+    "layout: participant_module/, assets/, submission.json, declaration.json, README.md",
+    "submission.json: team AceSentry, base_id apctt-base-9e7fe1324bb6",
+    "models: no catalogue model",
+    "contents: no environment, packages, caches, links, catalogue weights or undeclared weights",
+    "package hash matches submission.json: ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+    "licence: MIT, participant_module/LICENSE present"
+  ],
+  "errors": [],
+  "reviews": [
+    "licence dataset APCTT public sample cases (contracts/public-cases.json, USGS reports): review: unrecognised licence string \"U.S. public domain (USGS); some figures third-party, see the manifest licence_note\""
+  ],
+  "notes": [],
+  "result": "VALID_WITH_REVIEW",
+  "exit_code": 2,
+  "reminder": "third-party pure-Python code in your package is your responsibility: if a licence or security problem arises later, your team bears the legal responsibility and the award is revoked (D66)"
+}
