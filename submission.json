@@ -2,9 +2,9 @@
   "submission_version": "apctt-submission-v3",
   "team": "AceSentry",
   "package_id": "tracetrl-cpu",
-  "package_version": "0.1.0",
+  "package_version": "0.2.0",
   "base_id": "apctt-base-9e7fe1324bb6",
-  "declared_package_sha256": "04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
+  "declared_package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
   "license": "MIT",
   "compute": {
     "device": "cpu",

@@ -47,7 +47,7 @@ python /path/to/kit/tools/make_submission.py --check /path/to/dist/AceSentry_sub
 
 `make_submission.py` selects only `participant_module/`, `assets/`, `submission.json`, `declaration.json` and this README. Source tests, documentation, tools and GitHub workflows stay in the source repository. Public model weights and dependencies never belong in the submission ZIP. The tool computes the package hash.
 
-**Before final submission:** replace `AceSentry` in both metadata files with the registered team name; finish the official Linux worker/base checks; review representative real-report results; run pack and check again. Upload the resulting ZIP through the [submission form](https://forms.gle/sU21rDGVDULzWExY9). Pushing to GitHub does not submit an entry. No portal submission has been made by this project.
+The registered team is **AceSentry**. Before submission, check the validation record for the exact current package version, review real-report results, then run pack and check again. Upload the resulting ZIP through the [submission form](https://forms.gle/sU21rDGVDULzWExY9). Pushing to GitHub does not submit an entry. No portal submission has been made by this project.
 
 ## Optional semantic retrieval
 

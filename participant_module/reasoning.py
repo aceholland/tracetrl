@@ -23,9 +23,12 @@ def criterion_kind(description):
 def judgement(kind, text, intended_environment):
     """Return supported / rejected / unknown from the actual excerpt."""
     text = text.lower()
-    planned = has(r'\b(will|would|could|should|may|might|propos\w*|plan\w*|future|next year|expected to|scheduled|upcoming|anticipat\w*|intend\w*)\b|\bto be (tested|validated|demonstrated|qualified)\b', text)
+    # The month in a completed study period is not the modal verb "may".
+    planning_text = re.sub(r'\bmay(?=\s+(?:through|to|\d{1,2}\b))', 'month', text)
+    planning_text = re.sub(r'\bcriteria proposed by\b', 'criteria cited from', planning_text)
+    planned = has(r'\b(will|would|could|should|may|might|plan\w*|future|next year|expected to|scheduled|upcoming|anticipat\w*|intend\w*|propos\w*)\b|\bto be (tested|validated|demonstrated|qualified|evaluated|calibrated|compared|measured)\b', planning_text)
     tested = has(r'\b(tested|validated|demonstrated|evaluated|measured|verified)\b', text)
-    article = has(r'\b(prototype|breadboard|component|sensor|instrument|model|system|software|algorithm|method|device)\b', text)
+    article = has(r'\b(prototypes?|breadboards?|components?|sensors?|instruments?|models?|systems?|software|algorithms?|methods?|devices?)\b', text)
     lab = has(r'\b(laboratory|lab|bench|benchtop|in vitro)\b', text)
     relevant = has(r'\b(simulat\w*|representative|relevant environment|environmental chamber|testbed|test bed)\b', text)
     operation = has(r'\b(actual|operational|field|real-world|routine|in service|deployment)\b', text)
@@ -35,6 +38,24 @@ def judgement(kind, text, intended_environment):
     measured = has(r'\b(measured|measurements|achieved|results (showed|indicated|demonstrated)|accuracy|sensitivity|error|precision|performance|efficiency)\b', text)
     missing_results = has(r'\b(no|without|lack of)\s+(measured\s+)?(measurements?|results?|performance data)\b|\bnot\s+(yet\s+)?(been\s+)?(measured|obtained|reported)\b', text)
     measured = measured and not missing_results
+    # A numerical simulation is not a relevant-environment prototype demonstration.
+    # Quantitative model-to-observation comparisons can establish analytical proof.
+    metric = r'\b(error|rmse|nrmse|nse|r2|bias|coefficient of determination)\b'
+    reported_metric = (has(metric + r'[^.!?]{0,300}\b(was|were|is|equals?)\s+(?:about\s+|approximately\s+)?[-\u2212]?\d+(?:\.\d+)?', text)
+                       or (has(r'\bassessed as (satisfactory|good|acceptable|accurate)\b', text)
+                           and has(metric + r'\s*\([-\u2212]?\d+\.\d+\)', text))
+                       or (has(r'\bmodel performance measures?\b', text)
+                           and has(r'\bobserved\b', text)
+                           and has(metric + r'\s+[-\u2212]?\d+\.\d+', text)))
+    model_result = (has(r'\bmodels?\b', text)
+                    and has(r'\b(calibrated|evaluated|tested|assessed|compared)\b', text)
+                    and (has(r'\b(observed|measured|surveyed)\b', text)
+                         or has(r'\bstatistical measures?\b', text))
+                    and reported_metric
+                    and not missing_results
+                    and not has(r'\b(not|never)\s+(?:yet\s+)?(?:been\s+)?(?:calibrated|compared|assessed|evaluated)\b', text)
+                    and not has(r'\b(unsatisfactory|unacceptable|inadequate|failed)\b|\bacceptance threshold\b|\bnot satisfactory\b', text)
+                    and not has(r'\b(desired|target)\s+(?:\w+\s+){0,3}(error|rmse|nrmse|nse|r2|bias)\b', text))
     outcome = has(r'\b(success\w*|met|meets|exceeded|satisf\w*|passed|achieved|failed|did not meet)\b', text)
     requirements = has(r'\b(requirement\w*|acceptance|threshold|specification\w*|criteria)\b', text)
     quantified = has(r'\b\d+(\.\d+)?\s*(percent|%|mg|mm|cm|km|hz|db|seconds|minutes|hours|w|kw|degrees)|\b\d+\.\d+\b', text)
@@ -58,9 +79,13 @@ def judgement(kind, text, intended_environment):
     supported = {
         1: has(r'\b(principle\w*|physical basis|theoretical basis|based on|governing equation\w*)\b', text)
            and has(r'\b(observ\w*|experiment\w*|stud\w*|literature|theory|equation\w*)\b', text),
-        2: has(r'\b(concept|designed to|intended to|operates by|works by|consists of)\b', text)
-           and has(r'\b(application|monitor\w*|detect\w*|measur\w*|process\w*|control\w*)\b', text),
-        3: (lab or has(r'\b(analytical|proof of concept|proof-of-concept)\b', text)) and measured and (tested or quantified),
+        2: (has(r'\b(concept|designed to|intended to|operates by|works by|consists of)\b', text)
+            and has(r'\b(application|monitor\w*|detect\w*|measur\w*|process\w*|control\w*)\b', text))
+           or (article and has(r'\b(reads|accepts|takes)\b', text)
+               and has(r'\b(creates|produces|writes|computes)\b', text)
+               and has(r'\b(files?|records?|data|inputs?|outputs?)\b', text)
+               and has(r'\b(simulat\w*|predict\w*|monitor\w*|detect\w*|measur\w*|control\w*)\b', text)),
+        3: ((lab or has(r'\b(analytical|proof of concept|proof-of-concept)\b', text)) and measured and (tested or quantified)) or model_result,
         4: article and lab and tested and measured,
         5: article and tested and measured and demonstrated_environment,
         6: prototype and demonstrated and demonstrated_environment,
@@ -89,7 +114,12 @@ def assess_passages(case, checklist, passages, context, semantic=None):
         missing[cid] = f'No target-specific passage establishes: {description}'
         if kind is None or context.remaining_ms() < 1500:
             continue
-        candidates = retriever.search(description, case['assessment_target']['description'])
+        query = description
+        if kind == 3:
+            # Scientific reports often call analytical tests calibration or comparison.
+            # Retrieval vocabulary only selects excerpts; judgement still requires results.
+            query += ' calibrated calibration statistical error observed measured simulated comparison RMSE NSE performance'
+        candidates = retriever.search(query, case['assessment_target']['description'])
         if semantic is not None and context.remaining_ms() > 15000:
             candidates = semantic.rank(description, candidates[:32]) + candidates[32:]
         positive, negative = [], []

@@ -16,3 +16,5 @@ Ruling: Full CPU base inventory checking moved to GitHub-hosted Ubuntu because C
 Ruling: Public smoke cases all abstained. Coverage is limited; publish as an experimental baseline, not a proven competitive assessor.
 
 Task 3: complete for the agreed package/source delivery. Private repository aceholland/tracetrl pushed. Hosted Official CPU base checks and CPU smoke tests passed on commit 34ca75b89db73fb5a75592d1e8d25748d95a680b. Final ZIP downloaded from that checked hosted artifact. Submission form remains unsent. Optional semantic mode remains disabled pending benchmarking.
+
+Version 0.2.0: generic scientific-language coverage and adversarial regressions; 35 core tests passed. Official local HTTP API ran three real reports and a synthetic report with exact package identity and page quotations. Public results now TRL2/TRL3/TRL3; these are heuristic estimates, not expert accuracy scores. Website per-criterion evidence review and source-page rendering are implemented outside the Stage 1 ZIP.

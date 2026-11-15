@@ -1,0 +1,380 @@
+{
+  "checked_at": "2026-11-15T23:20:54.499660+05:30",
+  "health": {
+    "ready": true,
+    "backend": "official kit HTTP API; development worker",
+    "kit": {
+      "ready": true,
+      "reason_code": "READY",
+      "loading_policy": "cold_per_case",
+      "active_assessment_id": null,
+      "compute_status": {
+        "device": "cpu",
+        "require_cuda": false,
+        "status": "NOT_REQUIRED"
+      }
+    }
+  },
+  "package_version": "0.2.0",
+  "package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
+  "environment": "Official kit HTTP API and WSL development worker; not the complete frozen CPU base",
+  "cases": [
+    {
+      "case": "USGS-SDG-012",
+      "pdf_sha256": "137ba036159cbdd15974df8bbcd13fe660a900f84d77d598eff927a6bfc8a44d",
+      "pages": 24,
+      "wall_seconds": 8.218,
+      "backend": "official kit HTTP API; development worker",
+      "result_origin": "module",
+      "status": "completed",
+      "predicted_trl": 2,
+      "met_criteria": [
+        "APCTT-C02"
+      ],
+      "official_result_contract_issues": [],
+      "package_hash_matches": true,
+      "quotation_checks": [
+        {
+          "criterion_id": "APCTT-C02",
+          "page": 9,
+          "span_matches_source_page": true
+        }
+      ],
+      "meta": {
+        "trace_id": "c9aca67ebc6b429bb7eeae19401b07c2",
+        "api_version": "apctt-api-v0.2-draft",
+        "schema_version": "apctt-pdf-example-v1",
+        "package_id": "tracetrl-cpu",
+        "input_sha256": "9cc7145d92f46bf2e35cfb29830d14dcd4c03a98cd740848d84bcd06d5b7419f",
+        "config_sha256": "f2ce470562e9a614762e45918ecae4d0d6f6a2fb1d354dbe9c0d691285fdb9ff",
+        "verified_package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
+        "accepted_at": "2026-11-15T17:50:30.860Z",
+        "started_at": "2026-11-15T17:50:31.239Z",
+        "finished_at": "2026-11-15T17:50:35.087Z"
+      },
+      "diagnostics": {
+        "accepted_trace_id": "a7431f35de704860b2719b08ece05819",
+        "cleanup_confirmed": true,
+        "compute": {
+          "cuda_available": null,
+          "device": "cpu",
+          "kernel_probe_passed": null,
+          "measurement_method": null,
+          "peak_allocated_bytes": null,
+          "peak_reserved_bytes": null,
+          "torch_cuda_build": null,
+          "torch_version": null
+        },
+        "exit_code": 0,
+        "exit_signal": null,
+        "loading_policy": "cold_per_case",
+        "phase": "finished",
+        "profile": "dev",
+        "raw_output_bytes": 4601,
+        "raw_output_sha256": "2ac044530054d33a7d64a312348d7c9bac04cb9a2fd75c6cf183f391d8efc0b2",
+        "stderr_bytes": 0,
+        "stderr_truncated": false,
+        "stdout_bytes": 0,
+        "stdout_truncated": false,
+        "timed_out": false,
+        "timing_sources": {
+          "assess": "worker_observed",
+          "cleanup": "worker_observed",
+          "load": "worker_observed",
+          "total": "supervisor"
+        },
+        "timings_ms": {
+          "assess": 2842.511,
+          "cleanup": 0.015,
+          "load": 256.574,
+          "total": 3861.86
+        },
+        "truncated": false,
+        "unavailable_reasons": {
+          "kernel_probe_passed": "PROBE_RUNS_AT_SERVER_START",
+          "peak_memory": "NOT_MEASURED",
+          "torch": "TORCH_NOT_IMPORTED"
+        },
+        "warning_codes": [],
+        "worker_phase": "finished"
+      }
+    },
+    {
+      "case": "USGS-SDG-040",
+      "pdf_sha256": "a011196ade29973023b3cdab110f6b6a20e23bf159d200c49ea151fa7187cd5f",
+      "pages": 22,
+      "wall_seconds": 5.308,
+      "backend": "official kit HTTP API; development worker",
+      "result_origin": "module",
+      "status": "completed",
+      "predicted_trl": 3,
+      "met_criteria": [
+        "APCTT-C03"
+      ],
+      "official_result_contract_issues": [],
+      "package_hash_matches": true,
+      "quotation_checks": [
+        {
+          "criterion_id": "APCTT-C03",
+          "page": 15,
+          "span_matches_source_page": true
+        }
+      ],
+      "meta": {
+        "trace_id": "0278ae8d9c9744448934950d3fcf59dd",
+        "api_version": "apctt-api-v0.2-draft",
+        "schema_version": "apctt-pdf-example-v1",
+        "package_id": "tracetrl-cpu",
+        "input_sha256": "4c4e9d179bfe17698a9eff8e0a7021603817e06a4ac46dc173f949782457134b",
+        "config_sha256": "f2ce470562e9a614762e45918ecae4d0d6f6a2fb1d354dbe9c0d691285fdb9ff",
+        "verified_package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
+        "accepted_at": "2026-11-15T17:50:37.148Z",
+        "started_at": "2026-11-15T17:50:37.406Z",
+        "finished_at": "2026-11-15T17:50:40.573Z"
+      },
+      "diagnostics": {
+        "accepted_trace_id": "33b9aa3740d440d5a7dd805be9103dbc",
+        "cleanup_confirmed": true,
+        "compute": {
+          "cuda_available": null,
+          "device": "cpu",
+          "kernel_probe_passed": null,
+          "measurement_method": null,
+          "peak_allocated_bytes": null,
+          "peak_reserved_bytes": null,
+          "torch_cuda_build": null,
+          "torch_version": null
+        },
+        "exit_code": 0,
+        "exit_signal": null,
+        "loading_policy": "cold_per_case",
+        "phase": "finished",
+        "profile": "dev",
+        "raw_output_bytes": 4789,
+        "raw_output_sha256": "b2d42c478b30dbb1613f421a775109bfa863bacb2e7b3168918e3af36d5d7ee5",
+        "stderr_bytes": 430,
+        "stderr_truncated": false,
+        "stdout_bytes": 0,
+        "stdout_truncated": false,
+        "timed_out": false,
+        "timing_sources": {
+          "assess": "worker_observed",
+          "cleanup": "worker_observed",
+          "load": "worker_observed",
+          "total": "supervisor"
+        },
+        "timings_ms": {
+          "assess": 2391.162,
+          "cleanup": 0.017,
+          "load": 149.542,
+          "total": 3211.002
+        },
+        "truncated": false,
+        "unavailable_reasons": {
+          "kernel_probe_passed": "PROBE_RUNS_AT_SERVER_START",
+          "peak_memory": "NOT_MEASURED",
+          "torch": "TORCH_NOT_IMPORTED"
+        },
+        "warning_codes": [],
+        "worker_phase": "finished"
+      }
+    },
+    {
+      "case": "USGS-SDG-061",
+      "pdf_sha256": "1554255dfb7d3487199e954d2dd47c11120c1252d5058219725a0d1ff8a4b130",
+      "pages": 36,
+      "wall_seconds": 8.458,
+      "backend": "official kit HTTP API; development worker",
+      "result_origin": "module",
+      "status": "completed",
+      "predicted_trl": 3,
+      "met_criteria": [
+        "APCTT-C03",
+        "APCTT-C10"
+      ],
+      "official_result_contract_issues": [],
+      "package_hash_matches": true,
+      "quotation_checks": [
+        {
+          "criterion_id": "APCTT-C03",
+          "page": 25,
+          "span_matches_source_page": true
+        },
+        {
+          "criterion_id": "APCTT-C03",
+          "page": 23,
+          "span_matches_source_page": true
+        },
+        {
+          "criterion_id": "APCTT-C10",
+          "page": 23,
+          "span_matches_source_page": true
+        }
+      ],
+      "meta": {
+        "trace_id": "45cf68ea00c24f378a4cda5529c4f3c1",
+        "api_version": "apctt-api-v0.2-draft",
+        "schema_version": "apctt-pdf-example-v1",
+        "package_id": "tracetrl-cpu",
+        "input_sha256": "e19e4bfcacc936e46323a5527ef958cb90cc550fafd59bd09cec3f1edf0035be",
+        "config_sha256": "f2ce470562e9a614762e45918ecae4d0d6f6a2fb1d354dbe9c0d691285fdb9ff",
+        "verified_package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
+        "accepted_at": "2026-11-15T17:50:43.197Z",
+        "started_at": "2026-11-15T17:50:43.500Z",
+        "finished_at": "2026-11-15T17:50:49.165Z"
+      },
+      "diagnostics": {
+        "accepted_trace_id": "0b0ae37328504093869d480439bc462d",
+        "cleanup_confirmed": true,
+        "compute": {
+          "cuda_available": null,
+          "device": "cpu",
+          "kernel_probe_passed": null,
+          "measurement_method": null,
+          "peak_allocated_bytes": null,
+          "peak_reserved_bytes": null,
+          "torch_cuda_build": null,
+          "torch_version": null
+        },
+        "exit_code": 0,
+        "exit_signal": null,
+        "loading_policy": "cold_per_case",
+        "phase": "finished",
+        "profile": "dev",
+        "raw_output_bytes": 5826,
+        "raw_output_sha256": "819a203423d1fd55bf421f1f3917319ae8ae517d247f3af84e9c6997e6911741",
+        "stderr_bytes": 0,
+        "stderr_truncated": false,
+        "stdout_bytes": 0,
+        "stdout_truncated": false,
+        "timed_out": false,
+        "timing_sources": {
+          "assess": "worker_observed",
+          "cleanup": "worker_observed",
+          "load": "worker_observed",
+          "total": "supervisor"
+        },
+        "timings_ms": {
+          "assess": 4710.025,
+          "cleanup": 0.014,
+          "load": 190.744,
+          "total": 5733.95
+        },
+        "truncated": false,
+        "unavailable_reasons": {
+          "kernel_probe_passed": "PROBE_RUNS_AT_SERVER_START",
+          "peak_memory": "NOT_MEASURED",
+          "torch": "TORCH_NOT_IMPORTED"
+        },
+        "warning_codes": [],
+        "worker_phase": "finished"
+      }
+    },
+    {
+      "case": "synthetic",
+      "pdf_sha256": "c737109b66c6d1f9592486a37a49c98d3d24df080dcd913de2879b7ca8a787d0",
+      "pages": 2,
+      "wall_seconds": 4.858,
+      "backend": "official kit HTTP API; development worker",
+      "result_origin": "module",
+      "status": "completed",
+      "predicted_trl": 4,
+      "met_criteria": [
+        "APCTT-C03",
+        "APCTT-C04",
+        "APCTT-C10",
+        "APCTT-C11",
+        "APCTT-C12"
+      ],
+      "official_result_contract_issues": [],
+      "package_hash_matches": true,
+      "quotation_checks": [
+        {
+          "criterion_id": "APCTT-C03",
+          "page": 2,
+          "span_matches_source_page": true
+        },
+        {
+          "criterion_id": "APCTT-C04",
+          "page": 2,
+          "span_matches_source_page": true
+        },
+        {
+          "criterion_id": "APCTT-C10",
+          "page": 2,
+          "span_matches_source_page": true
+        },
+        {
+          "criterion_id": "APCTT-C11",
+          "page": 2,
+          "span_matches_source_page": true
+        },
+        {
+          "criterion_id": "APCTT-C12",
+          "page": 2,
+          "span_matches_source_page": true
+        }
+      ],
+      "meta": {
+        "trace_id": "6b57228819fe4e589d7bfa0ddc8d8406",
+        "api_version": "apctt-api-v0.2-draft",
+        "schema_version": "apctt-pdf-example-v1",
+        "package_id": "tracetrl-cpu",
+        "input_sha256": "a9c6e959f445ef3c58a99926e6be8faf95bd72478d042b351d8702eccde3985e",
+        "config_sha256": "f2ce470562e9a614762e45918ecae4d0d6f6a2fb1d354dbe9c0d691285fdb9ff",
+        "verified_package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
+        "accepted_at": "2026-11-15T17:50:51.260Z",
+        "started_at": "2026-11-15T17:50:51.498Z",
+        "finished_at": "2026-11-15T17:50:54.056Z"
+      },
+      "diagnostics": {
+        "accepted_trace_id": "9afd8829980d427298372ee79fb8aaed",
+        "cleanup_confirmed": true,
+        "compute": {
+          "cuda_available": null,
+          "device": "cpu",
+          "kernel_probe_passed": null,
+          "measurement_method": null,
+          "peak_allocated_bytes": null,
+          "peak_reserved_bytes": null,
+          "torch_cuda_build": null,
+          "torch_version": null
+        },
+        "exit_code": 0,
+        "exit_signal": null,
+        "loading_policy": "cold_per_case",
+        "phase": "finished",
+        "profile": "dev",
+        "raw_output_bytes": 5249,
+        "raw_output_sha256": "f182efbb83571691e0a18e6b1e5962f526642e58ea9d530216249d51985c7f1f",
+        "stderr_bytes": 0,
+        "stderr_truncated": false,
+        "stdout_bytes": 0,
+        "stdout_truncated": false,
+        "timed_out": false,
+        "timing_sources": {
+          "assess": "worker_observed",
+          "cleanup": "worker_observed",
+          "load": "worker_observed",
+          "total": "supervisor"
+        },
+        "timings_ms": {
+          "assess": 1290.949,
+          "cleanup": 0.019,
+          "load": 213.876,
+          "total": 2543.126
+        },
+        "truncated": false,
+        "unavailable_reasons": {
+          "kernel_probe_passed": "PROBE_RUNS_AT_SERVER_START",
+          "peak_memory": "NOT_MEASURED",
+          "torch": "TORCH_NOT_IMPORTED"
+        },
+        "warning_codes": [],
+        "worker_phase": "finished"
+      }
+    }
+  ],
+  "checks_passed": true,
+  "accuracy_limit": "Functional, identity and quotation checks; no hidden-set or expert accuracy score."
+}

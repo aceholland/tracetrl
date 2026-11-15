@@ -10,7 +10,11 @@ STOP = set('the a an and or of to in for on with by from is are was were be been
 
 
 def tokens(text: str) -> set[str]:
-    return {w for w in re.findall(r'[a-z][a-z0-9-]{2,}', text.lower()) if w not in STOP}
+    # Normalize common article plurals without stemming proper names or quotations.
+    plurals = {'models': 'model', 'sensors': 'sensor', 'algorithms': 'algorithm',
+               'instruments': 'instrument', 'devices': 'device', 'maps': 'map',
+               'prototypes': 'prototype', 'methods': 'method'}
+    return {plurals.get(w, w) for w in re.findall(r'[a-z][a-z0-9-]{2,}', text.lower()) if w not in STOP}
 
 
 @dataclass(frozen=True)
@@ -52,12 +56,12 @@ def extract_passages(case, context, settings):
                     if any(obj.get_object().get('/Subtype') == '/Image' for obj in objects.values()):
                         return passages, False
                     continue
-                # Overlapping sentence pairs preserve immediate context, always on one page.
+                # Three sentences retain target -> method -> numerical result context.
                 boundaries = [m.end() for m in re.finditer(r'(?<=[.!?])\s+(?=[A-Z0-9])', text)]
                 starts = [0] + boundaries
                 ends = boundaries + [len(text)]
                 for i, start in enumerate(starts):
-                    end = ends[min(i + 1, len(ends) - 1)]
+                    end = ends[min(i + 2, len(ends) - 1)]
                     # Very long sentence/table blocks are split into overlapping excerpts.
                     for offset in range(start, end, 650):
                         span = text[offset:min(offset + 900, end)].strip()
@@ -110,9 +114,10 @@ def target_scoped_text(text, target):
         if target_words and len(tokens(sentence) & target_words) >= needed:
             accepted.append(sentence)
             anchored = True
-        elif anchored and re.match(r'^(Measurements\b|Measured\b|Results\b|The results\b|It\b|This (test|prototype|sensor|system)\b|These (tests|results|measurements)\b)', sentence):
+        elif (anchored
+              and not re.search(r'\bmodel of\b|\b(?:of|for)\s+(?:the\s+)?\w+\s+model\b', sentence, re.I)
+              and re.match(r'^(Measurements\b|Measured\b|Results\b|The results\b|The (calibrated )?model\b|The (root.mean.square error|RMSE|NRMSE|NSE|R2|error)\b|It\b|This (test|prototype|sensor|system|model)\b|These (tests|results|measurements)\b)', sentence)):
             accepted.append(sentence)
-            anchored = False
         else:
             anchored = False
     return ' '.join(accepted)

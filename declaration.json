@@ -3,8 +3,8 @@
   "example_only": false,
   "team": "AceSentry",
   "package_id": "tracetrl-cpu",
-  "package_version": "0.1.0",
-  "declared_package_sha256": "04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
+  "package_version": "0.2.0",
+  "declared_package_sha256": "62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866",
   "team_training": "no_team_training",
   "training": null,
   "data_sources": [
@@ -30,8 +30,8 @@
       "source": "APCTT public sample cases (contracts/public-cases.json, USGS reports)",
       "version": "kit 0.5.0",
       "date": "2026-11-15",
-      "role": "Runtime and direct result-contract smoke tests on USGS-SDG-012, USGS-SDG-040, USGS-SDG-061; no training or accuracy tuning",
-      "label_origin": "No reference labels used for inference or tuning; no expert criterion labels available",
+      "role": "Runtime smoke tests and generic scientific-language rule development using unlabelled public report text from USGS-SDG-012, USGS-SDG-040 and USGS-SDG-061; no model training",
+      "label_origin": "No expert criterion labels available; organiser estimated TRLs are not used in inference or as rule targets",
       "linked_project": "Public diagnostic smoke cases",
       "license": "U.S. public domain (USGS); some figures third-party, see the manifest licence_note"
     }
@@ -49,5 +49,5 @@
       "pypdf 6.19.0 from the common base; base_id in submission.json"
     ]
   },
-  "notes": "AI-assisted original code; no team training. Registered team name supplied by the user: AceSentry. Optional MiniLM is disabled, not loaded or used in the default package. No reference TRL labels are used for inference."
+  "notes": "AI-assisted original code; no team training. Registered team: AceSentry. Optional MiniLM remains disabled and unbenchmarked. Generic rules were developed with synthetic scenarios and unlabelled public report text, with adversarial regression review. No reference TRL labels are used for inference."
 }

@@ -20,12 +20,12 @@ class AssessmentTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
 
-    def assess(self, pages, more=None, budget=180000):
+    def assess(self, pages, more=None, budget=180000, target='optical sensor'):
         root = Path(self.temp.name)
         path = write_pdf(root / 'report.pdf', pages)
         case = {'schema_version': 'apctt-pdf-example-v1', 'checklist_version': self.checklist['version'],
                 'case_id': 'TEST-1', 'assessment_target': {'target_id': 'sensor-1', 'type': 'component',
-                'description': 'optical sensor'}, 'intended_application': 'water quality monitoring',
+                'description': target}, 'intended_application': 'water quality monitoring',
                 'intended_environment': 'coastal water', 'title': 'Sensor tests', 'assessment_as_of': None,
                 'input_profile': 'pdf_report', 'documents': [{'document_id': 'D1', 'title': 'Tests',
                 'document_date': None, 'language': 'en', 'page_count': len(pages), 'path': str(path)}]}
@@ -152,6 +152,92 @@ class AssessmentTests(unittest.TestCase):
                               ['The optical sensor prototype has not been tested in a laboratory environment.'])
         evidence = result['evidence_reference']['APCTT-C04']
         self.assertEqual({x['document_id'] for x in evidence}, {'D1', 'D2'})
+
+    def test_executable_processing_workflow_establishes_concept(self):
+        text = 'The Delta software reads the flow records and creates temperature input files to simulate water temperature.'
+        result, _ = self.assess([text], target='Delta software')
+        self.assertEqual(result['criterion_status']['APCTT-C02'], 'met')
+        self.assertEqual(result['predicted_trl'], 2)
+
+    def test_quantitative_model_comparison_is_analytical_proof_only(self):
+        text = ('The rainfall models were calibrated by comparing simulated runoff with observed streamflow. '
+                'The root mean square error was 0.47 meters.')
+        result, _ = self.assess([text], target='rainfall model')
+        self.assertEqual(result['criterion_status']['APCTT-C03'], 'met')
+        self.assertEqual(result['predicted_trl'], 3)
+        self.assertNotEqual(result['criterion_status']['APCTT-C05'], 'met')
+
+    def test_model_result_can_follow_anchored_calibration_sentence(self):
+        text = ('The Delta river model was calibrated against streamgage observations. '
+                'The model was adjusted until simulated and observed water levels agreed. '
+                'The root mean square error was 0.28 meters.')
+        result, _ = self.assess([text], target='Delta river model')
+        self.assertEqual(result['criterion_status']['APCTT-C03'], 'met')
+        evidence = result['evidence_reference']['APCTT-C03'][0]
+        self.assertIn(evidence['supporting_span'], text)
+
+    def test_calibration_description_without_results_is_not_proof(self):
+        for text in ['The rainfall model was calibrated using observed flow records.',
+                     'The rainfall model will be calibrated against observed runoff with a target RMSE of 0.5 meters.',
+                     'The rainfall model was not calibrated against observed runoff; no results were reported.',
+                     'The rainfall model has 15 parameters and a version number of 1.2.']:
+            with self.subTest(text=text):
+                result, _ = self.assess([text], target='rainfall model')
+                self.assertNotEqual(result['criterion_status']['APCTT-C03'], 'met')
+
+    def test_adjacent_other_model_comparison_is_not_target_proof(self):
+        text = ('The rainfall model was developed for this study. '
+                'The turbine model was calibrated against observed rotation and had an RMSE of 0.2 meters.')
+        result, _ = self.assess([text], target='rainfall model')
+        self.assertNotEqual(result['criterion_status']['APCTT-C03'], 'met')
+
+    def test_reported_statistical_model_comparison_establishes_proof(self):
+        text = ('The rainfall model performance in simulating runoff was assessed as satisfactory '
+                'based on statistical measures of R2 (0.74) and NSE (0.62).')
+        result, _ = self.assess([text], target='rainfall model')
+        self.assertEqual(result['criterion_status']['APCTT-C03'], 'met')
+
+    def test_observed_model_error_survives_descriptive_detail(self):
+        text = ('The Delta river model was calibrated against observed levels. '
+                'The root mean square error computed from differences between surveyed high-water '
+                'marks in the simulation reach for the 2017 flood and simulated peak elevations was 0.47 meters.')
+        result, _ = self.assess([text], target='Delta river model')
+        self.assertEqual(result['criterion_status']['APCTT-C03'], 'met')
+
+    def test_month_and_cited_criteria_are_not_future_testing(self):
+        text = ('The rainfall model performance in simulating runoff from May through October was '
+                'assessed as satisfactory based on statistical measures of R2 (0.74) and NSE (0.62), '
+                'using criteria proposed by Brown (2019).')
+        result, _ = self.assess([text], target='rainfall model')
+        self.assertEqual(result['criterion_status']['APCTT-C03'], 'met')
+
+    def test_numerical_model_result_is_retrieved_among_many_generic_passages(self):
+        pages = ['The rainfall model report presents analytical and laboratory results about the critical function and characteristic.'] * 70
+        pages.append('The rainfall model was calibrated against observed runoff. The RMSE was 0.42 meters.')
+        result, _ = self.assess(pages, target='rainfall model')
+        self.assertEqual(result['criterion_status']['APCTT-C03'], 'met')
+        self.assertEqual(result['evidence_reference']['APCTT-C03'][0]['page'], 71)
+
+    def test_other_models_thresholds_proposals_and_failed_comparisons_are_not_proof(self):
+        examples = [
+            'The rainfall model was developed for this study. The model of the turbine was calibrated against observed rotation and had an RMSE of 0.2 meters.',
+            'The rainfall model was calibrated against observed flow. The root mean square error of the turbine model was 0.2 meters.',
+            'The rainfall model was calibrated against observed runoff using an RMSE acceptance threshold of 0.5 meters.',
+            'The rainfall model was never compared against observed runoff, despite its target RMSE of 0.5 meters.',
+            'The rainfall model calibration against observed runoff, with a desired RMSE of 0.5 meters, was proposed by Brown. The model is to be evaluated later.',
+            'The rainfall model was assessed as unsatisfactory based on statistical measures of R2 (0.04) and NSE (-0.62).',
+        ]
+        for text in examples:
+            with self.subTest(text=text):
+                result, _ = self.assess([text], target='rainfall model')
+                self.assertNotEqual(result['criterion_status']['APCTT-C03'], 'met')
+
+    def test_reported_model_error_can_be_compared_with_a_target(self):
+        text = ('The rainfall model was calibrated against observed runoff. '
+                'The root mean square error was 0.2 meters, meeting the target of 0.5 meters.')
+        result, _ = self.assess([text], target='rainfall model')
+        self.assertEqual(result['criterion_status']['APCTT-C03'], 'met')
+        self.assertEqual(result['predicted_trl'], 3)
 
 
 if __name__ == '__main__':

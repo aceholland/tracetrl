@@ -1,4 +1,25 @@
-# Validation record
+# Current validation — version 0.2.0
+
+Registered team: AceSentry. Date: 2026-11-15.
+
+35 assessor tests and nine upload tests passed on Windows. The official local kit HTTP API ran fresh WSL development workers for three public reports and a synthetic report. Every job originated in the module, matched the rebuilt package hash, had zero result-contract issues, and every quotation matched its cited PDF page. This local environment is not the complete frozen CPU base.
+
+| Report | Pages | Local HTTP wall time | Result |
+|---|---:|---:|---|
+| USGS-SDG-012 | 24 | 8.218 s | TRL 2 |
+| USGS-SDG-040 | 22 | 5.308 s | TRL 3 |
+| USGS-SDG-061 | 36 | 8.458 s | TRL 3 |
+| synthetic | 2 | 4.858 s | TRL 4 |
+
+See live-api-validation.json for worker metadata, hashes, criterion IDs and quotation checks. Generic rules now handle scientific model comparisons, numerical results and executable workflows. Independent adversarial review identified false positives involving another model, target thresholds, proposals and negated or unsatisfactory results. They were reproduced and added as regression tests before correction. No organiser TRL estimate is hardcoded or used as an inference label. These results do not establish expert or hidden-set accuracy.
+
+Package SHA-256: `62dc57569780ee95ae24b6d2d7b5af7d31eb5414784452235fe185293b9ba866`. ZIP SHA-256: `bc2ae4208b8e04c765e1b78720b77164045175838574b90dce6bfa46af85a1b1`. Official intake check: **VALID_WITH_REVIEW**, zero errors, one declared USGS licence review item. ZIP size: 16,719 bytes.
+
+Current-version hosted frozen CPU base checks are being run; older hosted evidence below applies only to 0.1.0 until superseded. No Google form submission has been made. The local website remains a prototype; official Stage 2 web development/integration must take place on site.
+
+---
+
+# Historical validation record — version 0.1.0
 
 Date: 2026-11-15. Registered team: AceSentry. Package: tracetrl-cpu 0.1.0.
 
