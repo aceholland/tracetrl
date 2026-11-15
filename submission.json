@@ -4,7 +4,7 @@
   "package_id": "tracetrl-cpu",
   "package_version": "0.1.0",
   "base_id": "apctt-base-9e7fe1324bb6",
-  "declared_package_sha256": "ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+  "declared_package_sha256": "04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
   "license": "MIT",
   "compute": {
     "device": "cpu",

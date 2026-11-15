@@ -34,6 +34,6 @@ Ubuntu with Python 3.12.3 and the kit's exact requirements-dev.lock: all 24 test
 
 ## Remaining checks
 
-- The full frozen CPU base was not built locally because C: had too little free space. The GitHub Official CPU base checks workflow builds and checks it on Ubuntu, then runs the tests, official result validator and packer with its interpreter. Its result must be checked before claiming this validation passed.
+- The full frozen CPU base was not built locally because C: had too little free space. The hosted Ubuntu run built and verified the official CPU base, passed all 24 tests with its interpreter, and passed the official result validator. See hosted-base-check.json. Its initial packing step exposed a missing empty assets directory in Git; assets/.gitkeep now preserves it in source checkouts, and the complete workflow is rerun to verify packaging too.
 - Optional encoder cold-start runtime, memory and usefulness require a real-weight benchmark before it is enabled.
 - No submission form has been sent. GitHub publication and portal submission are separate actions.

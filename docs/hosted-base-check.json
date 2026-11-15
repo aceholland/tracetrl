@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "problems": [],
+  "worker_python": "/home/runner/work/_temp/apctt-base/bin/python",
+  "imports": {
+    "torch": {
+      "version": "2.11.0+cpu",
+      "file": "/home/runner/work/_temp/apctt-base/lib/python3.12/site-packages/torch/__init__.py",
+      "from": "base"
+    },
+    "numpy": {
+      "version": "2.5.3",
+      "file": "/home/runner/work/_temp/apctt-base/lib/python3.12/site-packages/numpy/__init__.py",
+      "from": "base"
+    }
+  },
+  "torch_cuda": {
+    "build": null,
+    "available": false
+  },
+  "base_writable": true
+}

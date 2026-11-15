@@ -1,16 +1,16 @@
 {
   "zip": "C:\\Users\\User\\Documents\\Codex\\2026-11-15\\s\\outputs\\tracetrl\\..\\AceSentry_submission.zip",
-  "zip_sha256": "0b411fdf188a49d8ffc0e79d33c50d9650333298a616ba573400c3ba8f5fb210",
-  "size_bytes": 15561,
+  "zip_sha256": "5682e291adaf25414653ef86b955226f50af54ad0ef2cb83251bbc974948a6f5",
+  "size_bytes": 15669,
   "cap_bytes": 2000000000,
-  "declared_package_sha256": "ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+  "declared_package_sha256": "04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
   "passed": [
-    "size: 15.6 KB <= 2.0 GB",
+    "size: 15.7 KB <= 2.0 GB",
     "layout: participant_module/, assets/, submission.json, declaration.json, README.md",
     "submission.json: team AceSentry, base_id apctt-base-9e7fe1324bb6",
     "models: no catalogue model",
     "contents: no environment, packages, caches, links, catalogue weights or undeclared weights",
-    "package hash matches submission.json: ed41b754e0ff7e71c1978c065af7803f86b6704bb52d2fdb651f8fc74c1a84e5",
+    "package hash matches submission.json: 04062e3d1c4b9884c78d348775367c2842424bf6d81e36fbc82e4c20d69db2cb",
     "licence: MIT, participant_module/LICENSE present"
   ],
   "errors": [],
@@ -18,7 +18,7 @@
     "licence dataset APCTT public sample cases (contracts/public-cases.json, USGS reports): review: unrecognised licence string \"U.S. public domain (USGS); some figures third-party, see the manifest licence_note\""
   ],
   "notes": [
-    "not packed (the submission holds no environment; decision D59): .git/, .github/, .gitignore, LICENSE, docs/, requirements-dev.txt, tests/, tools/"
+    "not packed (the submission holds no environment; decision D59): .git/, .gitattributes, .github/, .gitignore, LICENSE, docs/, requirements-dev.txt, tests/, tools/"
   ],
   "result": "VALID_WITH_REVIEW",
   "exit_code": 2,
